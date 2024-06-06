@@ -7,7 +7,7 @@
         flex-direction: column;
     }
     .header__container{
-        padding:20px 0;
+        padding-top:20px;
     }
     .content__container{
         text-align: center;
