@@ -1,0 +1,35 @@
+@media only screen and (max-width: 620px) {
+    body{
+        font-size: 16px;
+    }
+    .wrapper{
+        flex-direction: column;
+    }
+    .content__container{
+        text-align: center;
+    }
+    .content__title{
+        margin-bottom:10px;
+    }
+    .content__button{
+        align-self: center;
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    body{
+        font-size: 12px;
+    }
+    .content__title{
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 270px) {
+    .photo{
+        border-radius:100%;
+        width: 150px;
+        height: 150px;
+    }
+}
