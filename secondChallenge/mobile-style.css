@@ -1,63 +1,28 @@
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 740px) {
     :root{
         font-size: 16px;
     }
-}
-
-@media only screen and (max-width: 790px) {
-    :root{
-        font-size: 14px;
+    body{
+        height: 100%;
     }
-    .menu__open{
-        width: 20px;
-        height: 20px;
+    main{
+        grid-template-columns: 1fr;
     }
-    .menu__line{
-        height: 2px;
-        min-height: 2px;
-    }
-    .close__button{
-        font-size: 2rem;
-    }
-    .timeline__container{
-        min-width: 200px;
-    }
-    .wrapper{
-        flex-direction: column;
-    }
-    .content__container{
+    article{
         text-align: center;
+        gap:40px;
     }
-    .content__title{
-        margin-bottom:10px;
-    }
-    .content__button{
+    button{
         align-self: center;
-        font-size: 0.8rem;
     }
 }
-
 
 @media only screen and (max-width: 350px) {
-    body{
-        font-size: 12px;
-    }
-    .content__title{
-        font-size: 2rem;
-    }
-}
-
-@media only screen and (max-width: 300px) {
-    .timeline__container{
-        min-width: 150px;
-    }
-}
-
-
-@media only screen and (max-width: 270px) {
-    .photo{
-        border-radius:100%;
-        width: 150px;
-        height: 150px;
+    :root{
+        font-size: 14px;
+    }   
+    img{
+        width: 200px;
+        height: 200px;
     }
 }

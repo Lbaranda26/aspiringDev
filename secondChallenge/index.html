@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -14,94 +10,68 @@
         <link rel="stylesheet" href="mobile-style.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="container">
+        <main>
             <aside class="aside__container">
-                <nav class="nav__container">
-
-                    <div class="menu__container">
-                        <div class="menu__open">
-                            <div class="menu__line"></div>
-                            <div class="menu__line"></div>
-                            <div class="menu__line"></div>
-                        </div>
-                    </div>
-
-                    <div class="timeline__container">
-                        <div class="menu__close">
-                            <button class="close__button">x</button>
-                        </div>    
-
-                        <h1 class="timeline__title">Timeline</h1>
-                         
-                        <div class="timeline__wrapper">
-                            <div class="date__container">
-                                <h4 class="date__title">1971</h4>
-                                <p class="date__text">Elon Musk is born in South Africa to an engineer father and a model mother</p>
-                            </div>
-                            
-                            <div  class="date__container">
-                                <h4 class="date__title">1983</h4>
-                                <p class="date__text">Writes first video game called Blastar; sells for $500.</p>
-                            </div>
-
-                            <div class="date__container">
-                                <h4 class="date__title">1995-1991</h4>
-                                <p class="date__text">Attends college at Queen's University in Kingston, Ontario. Then transfers to the Univerity of Pennyslavania completed a BS in Economics(Wharton) and a BA with a major in physics.</p>
-                            </div>
-                        </div>
-                    </div>
-
+                <nav class="menu__open_container hide">
+                    <div class="menu__open">&#9776</div>
                 </nav>
+                <summary class="summary__container">
+                    <div class="menu__close">x</div>
+
+                    <h1>Timeline</h1>
+                    <ul>
+                        <li>
+                            <time>1971</time>
+                            <p>Elon Musk is born in South Africa to an engineer father and a model mother</p>
+                        </li>
+                        <li>
+                            <time>1983</time>
+                            <p>Writes first video game called Blastar; sells for $500.</p>
+                        </li>
+                        <li>
+                            <time>1995-1991</time>
+                            <p>Attends college at Queen's University in Kingston, Ontario. Then transfers to the Univerity of Pennyslavania completed a BS in Economics(Wharton) and a BA with a major in physics.</p>
+                        </li>
+                    </ul>
+                </summary>
             </aside>
-            <div class="wrapper">
-                <header class="header__container">
-                    <picture class="photo__container">
-                        <img class="photo" src="elon-musk.jpg" alt="Elon Musk, smiling and wearing black clothes">
-                    </picture>
-                    <a class="photo__title" href="https://www.facebook.com/groups/6920566171359087/user/100063904608858/" target="_blank">Elon@spaceX</a>
-                </header>
-                <main class="content__container">
-                    <h1 class="content__title">Elon Musk</h1>
-                    <p class="content__message">Elon is a South African-born America entrepreneur and businessman who founded X.com in 1999 (which later became PayPal), spaceX in 2002 and Tesla Motors in 2003. Musk became a multimillionaire in his late 20s when he sold his start-up company. Zip2 to a division of Compaq Computers. He has an estimated net worth of around 59.2 billion dollars and is listed as the 16th richest person in the world according to Forbes. His ultimate goal is to make life multiplanetery and help humanity explore beyond Earth.</p>
-                    <button class="content__button button__default">Read More</button>
-                </main>
-            </div>
-        </div>
+    
+            <figure>
+                <img src="elon-musk.jpg" alt="Elon Musk, smiling and wearing black clothes">
+                <figcaption>
+                    <a href="https://www.facebook.com/groups/6920566171359087/user/100063904608858/" target="_blank">Elon@spaceX</a>
+                </figcaption>
+            </figure>
+            
+            <article>
+                <h1>Elon Musk</h1>
+                <p>Elon is a South African-born America entrepreneur and businessman who founded X.com in 1999 (which later became PayPal), spaceX in 2002 and Tesla Motors in 2003. Musk became a multimillionaire in his late 20s when he sold his start-up company. Zip2 to a division of Compaq Computers. He has an estimated net worth of around 59.2 billion dollars and is listed as the 16th richest person in the world according to Forbes. His ultimate goal is to make life multiplanetery and help humanity explore beyond Earth.</p>
+                <button>Read More</button>
+            </article>
+        </main>
 
         <script>
-            const readMore = document.querySelector(".content__button");
-
-            const menuOpen = document.querySelector(".menu__open");
+            const menuOpenContainer = document.querySelector(".menu__open_container");
             const menuClose = document.querySelector(".menu__close");
-            const timelineContainer = document.querySelector(".timeline__container");
+            const summaryContainer = document.querySelector(".summary__container");
             const asideContainer = document.querySelector(".aside__container");
 
-            readMore.addEventListener("click", () => {
-                window.open("https://www.facebook.com/groups/6920566171359087/?notif_id=1717647618951045&notif_t=group_r2j_approved&ref=notif");
+            menuOpenContainer.addEventListener("click", () => {
+                menuOpenContainer.classList.add("hide");
+                menuOpenContainer.classList.remove("show");
+                summaryContainer.classList.remove("hide");
+                summaryContainer.classList.add("show");
+                asideContainer.classList.add("overflow__show");
             });
-
-            readMore.addEventListener("mouseenter", (e) => {
-                readMore.style.backgroundColor = "var(--background)";
-                readMore.style.border = "1px solid var(--button-color)";
-
-             })
-            readMore.addEventListener("mouseleave", (e) => {
-                readMore.style.backgroundColor = "var(--button-color)";
-                readMore.style.border = "1px solid var(--button-color)";
-            })
-
 
             menuClose.addEventListener("click", () => {
-                timelineContainer.style.translate = "-100% 0";
-                asideContainer.style.flexBasis = "0%";
+                menuOpenContainer.classList.remove("hide");
+                menuOpenContainer.classList.add("show");
+                summaryContainer.classList.add("hide");
+                summaryContainer.classList.remove("show");
+                asideContainer.classList.remove("overflow__show");
             });
-            menuOpen.addEventListener("click", () => {
-                timelineContainer.style.translate = "0% 0";
-                asideContainer.style.flexBasis = "30%";
-            });
+
         </script>
     </body>
 </html>
