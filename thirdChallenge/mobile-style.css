@@ -1,0 +1,29 @@
+@media only screen and (max-width: 840px) {
+    *{
+        font-size: 14px;
+    }
+    .main__container .wrapper{
+        min-height: 100vh;
+    }
+    #profile.wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    #profile article{}
+    #profile h1{
+        font-size: 2.5rem;
+        font-weight: 100;
+        line-height: 150%;
+    }
+    #profile figure{}
+    #profile img{}
+
+    #works section{
+        grid-template-columns: 1fr;
+    }
+
+    #contact.wrapper{
+        grid-template-columns: 1fr;
+    }
+}
