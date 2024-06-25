@@ -6,10 +6,78 @@
         <title>Aspiring Dev - Challenge 4</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: sans-serif;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin:0 10%;
+                background: rgb(23, 23, 23);
+            }
+            .wrapper{
+                width: 600px;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap:20px;
+                color:#fff;
+            }
+            header{
+                text-align: center;
+            }
+            h1{
+                margin-bottom:10px;
+            }
+            main > *{
+                margin-bottom:10px;
+            }
+            main{
+                background: #fff;
+                color:#000;
+                padding:20px;
+            }
+        </style>
     </head>
     <body>
+        <div class="wrapper">
+            <header>
+                <h1>AspiringDev - Challenge</h1>
+                <p>Mapapansin nyo diba ibang iba ung treat sa kanila ung different nato eh magcacause ng problema lalo na kapag meron missing alignments sa pagitan ng client at server. Ma's maganda sana if pwersahin nating gamitjn ung alin sa kanila. Sa challenge nato lahat ng undefined eh I treat natin as undefined!</p>
+            </header>
+            <main>
+                <div>
+                    <h3>Problem</h3>
+                    const input = {
+                        a: undefined,
+                        b: {
+                            c: {
+                                d:undefined,
+                                e: ['BFE.dev', undefined]
+                            }
+                        }
+                    }
+                </div>
+                <div class="main__container">
+                </div>
+                <div class="solution__container"></div>
+            </main>
+        </div>
         <script>
+            const mainContainer = document.querySelector(".main__container")
+            const solutionContainer = document.querySelector(".solution__container")
+
+
+            problemContainer = "";
+            solution = "";
+
             //PROBLEM
             //Sa challenge nato lahat ng undefined eh I treat natin as undefined!
             const input = {
@@ -22,13 +90,16 @@
                 }
             }
 
+            problemContainer = JSON.stringify(Object.entries(input));
+            mainContainer.innerHTML = "<h3>Problem Output in console</h3>" + problemContainer;
+
 
             //Convert the object to string
             //All typeof undefined will be convert it to undefined
-            //Back to Object
-
-            
+            //Back to Object                
             console.log(undefinedToNull(Object.entries(input)))
+            solution = JSON.stringify(undefinedToNull(Object.entries(input)));
+            solutionContainer.innerHTML = "<h3>Answer</h3>" + solution;
 
             function allUndefinedConverttoNull(arg, value){
                 return value == undefined ? typeof undefined : value;
