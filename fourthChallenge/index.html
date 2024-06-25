@@ -102,11 +102,11 @@
             solution = JSON.stringify(undefinedToNull(Object.entries(input)));
             solutionContainer.innerHTML = "<h3>Answer</h3>" + solution;
 
-            function allUndefinedConverttoNull(arg, value){
+            function allUndefinedConverttoNull(input, value){
                 return value == undefined ? typeof undefined : value;
             }
-            function undefinedToNull(arg){
-                return JSON.parse(JSON.stringify(arg, allUndefinedConverttoNull));
+            function undefinedToNull(input){
+                return JSON.parse(JSON.stringify(input, allUndefinedConverttoNull));
             }
         </script>
     </body>
