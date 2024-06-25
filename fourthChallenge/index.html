@@ -98,15 +98,15 @@
             //Convert the object to string
             //All typeof undefined will be convert it to undefined
             //Back to Object                
-            console.log(undefinedToNull(Object.entries(input)))
-            solution = JSON.stringify(undefinedToNull(Object.entries(input)));
+            console.log(undefinedToUndefined(Object.entries(input)))
+            solution = JSON.stringify(undefinedToUndefined(Object.entries(input)));
             solutionContainer.innerHTML = "<h3>Answer</h3>" + solution;
 
-            function allUndefinedConverttoNull(input, value){
+            function allUndefinedConverttoUndefined(input, value){
                 return value == undefined ? typeof undefined : value;
             }
-            function undefinedToNull(input){
-                return JSON.parse(JSON.stringify(input, allUndefinedConverttoNull));
+            function undefinedToUndefined(input){
+                return JSON.parse(JSON.stringify(input, allUndefinedConverttoUndefined));
             }
         </script>
     </body>
