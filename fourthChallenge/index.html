@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Aspiring Dev - Challenge 4</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+            //PROBLEM
+            //Sa challenge nato lahat ng undefined eh I treat natin as undefined!
+            const input = {
+                a: undefined,
+                b: {
+                    c: {
+                        d:undefined,
+                        e: ['BFE.dev', undefined]
+                    }
+                }
+            }
+
+
+            //Convert the object to string
+            //All typeof undefined will be convert it to undefined
+            //Back to Object
+
+            
+            console.log(undefinedToNull(Object.entries(input)))
+
+            function allUndefinedConverttoNull(arg, value){
+                return value == undefined ? typeof undefined : value;
+            }
+            function undefinedToNull(arg){
+                return JSON.parse(JSON.stringify(arg, allUndefinedConverttoNull));
+            }
+        </script>
+    </body>
+</html>
